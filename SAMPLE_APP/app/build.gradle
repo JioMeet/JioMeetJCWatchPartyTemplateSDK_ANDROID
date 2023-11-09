@@ -55,8 +55,8 @@ android {
 repositories {
     maven {
         credentials {
-            username = ""
-            password = ""
+            username = credentials.username
+            password = credentials.password
         }
         url = uri("https://maven.pkg.github.com/JioMeet/JioMeetJCWatchPartyTemplateSDK_ANDROID")
     }
