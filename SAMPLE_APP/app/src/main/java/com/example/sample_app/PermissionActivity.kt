@@ -14,8 +14,7 @@ class PermissionActivity : ComponentActivity() {
     private val conferencePermissions = arrayOf(
         Manifest.permission.CAMERA,
         Manifest.permission.RECORD_AUDIO,
-        Manifest.permission.READ_PHONE_STATE,
-        Manifest.permission.BLUETOOTH_CONNECT
+        Manifest.permission.READ_PHONE_STATE
     )
 
     private val requestPermissionLauncher =

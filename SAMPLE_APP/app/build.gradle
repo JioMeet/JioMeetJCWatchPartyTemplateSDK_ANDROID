@@ -55,8 +55,8 @@ android {
 repositories {
     maven {
         credentials {
-            username = credentials.username
-            password = credentials.password
+            username = "HemadriBoddu"
+            password = "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"
         }
         url = uri("https://maven.pkg.github.com/JioMeet/JioMeetJCWatchPartyTemplateSDK_ANDROID")
     }
@@ -66,7 +66,7 @@ repositories {
 
 dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
-    implementation "com.jiomeet.platform:jiomeetwatchpartytemplatesdk:2.3.0-SNAPSHOT"
+    implementation "com.jiomeet.platform:jiomeetwatchpartytemplatesdk:3.0.0"
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

@@ -39,7 +39,9 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/Theme.SAMPLE_APP"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        tools:replace="android:name"
+        >
 
     <activity
             android:name="com.example.sample_app.PermissionActivity"

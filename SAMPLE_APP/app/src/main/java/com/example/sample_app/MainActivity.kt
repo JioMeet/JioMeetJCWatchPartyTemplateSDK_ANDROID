@@ -33,7 +33,6 @@ import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import org.jio.sdk.LaunchWatchParty
 import org.jio.sdk.common.navigation.WatchPartyNav
 import org.jio.sdk.conference.model.WatchPartyData
 import org.jio.sdk.conference.model.WatchPartyListener
@@ -151,9 +150,9 @@ class MainActivity : AppCompatActivity() {
             watchPartyData = WatchPartyData(
                 //pass clientToken
                 clientToken = "",
-                meetingID = "", //pass empty meeting id/pass to start watchparty
-                isUserJoiner = false,
-                meetingPin = "",
+                meetingID = "5301906576", //pass empty meeting id/pass to start watchparty
+                isUserJoiner = true,
+                meetingPin = "4Zk2p",
                 partyGuestName = "",
                 isLoggedInUser = false,
                 userName = "Test",
