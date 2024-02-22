@@ -1,5 +1,6 @@
 package com.example.sample_app
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.ActionBar
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     private val jioMeetConnectionListener = object : JCConnectionListener {
 
         override fun onShareInviteClicked(meetingId: String, meetingPin: String, name: String) {
-
+            sendInvitation(meetingId,meetingPin,name)
         }
 
         override fun closeWatchParty() {
@@ -64,6 +65,26 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    fun sendInvitation(
+        id: String,
+        token: String,
+        creatorName: String,
+    ) {
+        val joinString =
+            "https://jiomeetpro.jio.com/conference/call/shortener?meetingId=$id&pwd=$token&creatorName=$creatorName"
+        val body: String =
+            "You are invited to a JioMeet meeting. Please click this link to join:$joinString"
+
+
+        val sendIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TEXT, body)
+            putExtra(Intent.EXTRA_SUBJECT, "JioMeet meeting invitation")
+        }
+        this.startActivity(sendIntent)
     }
 
     @OptIn(ExperimentalPagerApi::class)
@@ -147,12 +168,13 @@ class MainActivity : AppCompatActivity() {
                 0 -> TabContentScreen(data = "Welcome to Main Screen")
                 1 -> WatchPartyNav(
                     modifier = Modifier,
+
             watchPartyData = WatchPartyData(
                 //pass clientToken
                 clientToken = "",
-                meetingID = "5301906576", //pass empty meeting id/pass to start watchparty
+                meetingID = "",
                 isUserJoiner = true,
-                meetingPin = "4Zk2p",
+                meetingPin = "",
                 partyGuestName = "",
                 isLoggedInUser = false,
                 userName = "Test",
